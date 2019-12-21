@@ -1,0 +1,242 @@
+/* HTML Tags */
+
+nav {
+	background-color: #008080;
+}
+
+input {
+	width: 100%;
+	vertical-align: middle;
+}
+
+h4 {
+	text-align: center;
+}
+
+label {
+	font-size: 14px;
+}
+
+svg {
+	position: relative;
+}
+
+g{
+	pointer-events: none;
+}
+
+path {
+	fill: none;
+	stroke: #444444;
+}
+
+nav {
+	height: 55px;
+}
+
+footer {
+	width: 100%;
+	text-align: center;
+}
+
+/* Custom classes */
+
+.spinner-border {
+  display: block;
+  position: fixed;
+  top: 50%;
+  left: 37%;
+}
+
+.hidden {
+	display: none !important;
+}
+
+.tooltip {
+	background-color: rgba(0,0,0,0.8);
+	font-family: "Arial";
+	padding: 5px !important;
+	border-radius: 5px;
+	color: white;
+	z-index: 9999;
+	text-align: center;
+	font-size: 10px;
+}
+
+.percentage-tooltip-text {
+	font-weight: bold;
+	font-size: 15px;
+}
+
+.percentage-tooltip-text-mobile {
+	font-weight: bold;
+	font-size: 15px;
+}
+
+.slider-title {
+	text-align: center;
+	float: left;
+	height: 60px;
+	width: 40%;
+	font-size: 14px;
+	vertical-align: middle;
+	line-height: 25px;
+	margin-bottom: 0px;
+}
+
+.slider-container {
+	height: 60px;
+	float: right;
+	width: 60%;
+	vertical-align: middle;
+	margin-bottom: 0px;
+}
+
+.slider {
+	-webkit-appearance: none;
+	height: 10px;
+	border-radius: 5px; 
+	outline: none;
+}
+
+/* slider customzation help from: https://www.w3schools.com/howto/howto_js_rangeslider.asp */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%; 
+  background: #008080;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #008080;
+  cursor: pointer;
+}
+
+.navbar-brand {
+	color: white !important;
+}
+
+.leaflet-pane, .leaflet-overlay-pane {
+	pointer-events: none;
+}
+
+.subscore-p {
+	font-size: 10pt;
+	width: 50%;
+	padding-right: 0px;
+	margin: 0px;
+	float: left;
+	height: 35px;
+	line-height: 35px;
+	text-align: center;
+	color: black;
+	font-weight: 600;
+}
+
+.checkbox-label {
+	float:left;
+	width: 90%;
+}
+
+.checkbox {
+	float: right;
+	width: 10%;
+	height: 17px;
+	margin-top: 10px;
+}
+
+.tooltip {
+	background-color: rgba(0,0,0,0.5);
+	font-family: "Arial";
+	padding: 15px;
+	border-radius: 5px;
+	color: white;
+	z-index: 99999999999999;
+	"position": "absolute";
+}
+
+/* IDs */
+
+#main {
+	width: 75%;
+	float: left;
+	display: inline;
+}
+
+#sidebar {
+	width: 25%;
+	height: auto;
+	padding: 20px;
+	background-color: #F5F5F5;
+	float: right;
+}
+
+#input-container {
+	display: block;
+	height: 300px;
+}
+
+#open-in-zillow-button {
+	width: 100%;
+	text-align: center;
+	font-size: 12px;
+	padding: 5px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	background-color: #008080;
+}
+
+#main, html, body {
+	height: 100%;
+	background-color: #F5F5F5;
+}
+
+#area-text-6{
+	text-align: center;
+}
+
+#toggle-sidebar-button {
+	background-color: transparent;
+	border-width: 0px;
+	display: none;
+	margin: auto;
+}
+
+#toggle-sidebar-button:focus {
+	outline: f0;
+}
+
+#toggle-sidebar-button-icon-wrapper {
+	color: #008080;
+}
+
+@media only screen and (max-width: 768px) {
+	#sidebar {
+    	display: block;
+    	width: 100%;
+    	height: auto;
+    	transition: height 2s;
+	}
+	#toggle-sidebar-button {
+		display: block;
+	}
+	#area-info-container {
+		display: none;
+	}
+	#check-container {
+		display: none;
+	}
+	#preferences-title {
+		display: none;
+	}
+  	#main {
+    	display: block;
+    	width: 100%;
+	}
+}

@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+        <head>
+
+            <!-- Metatags -->
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+            <!-- CSS -->
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+            <link rel="stylesheet" type="text/css" href="styles.css">
+            <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+            integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+            crossorigin=""/>
+
+            <!-- Global site tag (gtag.js) - Google Analytics -->
+            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-110818719-2"></script>
+            <script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+
+              gtag('config', 'UA-110818719-2');
+            </script>
+        </head>
+        <body>
+            
+            <!-- NAVBAR -->
+            <nav class="navbar navbar-light">
+              <span class="navbar-brand mb-0 h1">LivingBlocks</span>
+            </nav>
+
+            <div id="sidebar">
+
+                <h4 id="preferences-title">What's important to you?</h4>
+
+                <!-- INPUT SLIDERS -->
+                <div id="input-container">
+
+                    <p class="slider-title">Low Crime</p>
+                    <div class="slider-container">
+                        <input id="crimeSlider" type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                    </div>
+
+                    <p class="slider-title">Restaurants</p>
+                    <div class="slider-container">
+                        <input id="restaurantsSlider" type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                    </div>
+
+                    <p class="slider-title">Parks</p>
+                    <div class="slider-container">
+                        <input id="parkSlider" type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                    </div>
+
+                    <p class="slider-title">Bus Stops</p>
+                    <div class="slider-container">
+                        <input id="busSlider" type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                    </div>
+
+                    <p class="slider-title">Subway</p>
+                    <div class="slider-container">
+                        <input id="subwaySlider" type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                    </div>
+
+                </div>
+
+                <div id="area-info-container">
+                    <h4>This area</h4>
+                    <p id="area-text-6"></p>
+                    <p id="area-text-1" class="subscore-p"></p>
+                    <p id="area-text-2" class="subscore-p"></p>
+                    <p id="area-text-3" class="subscore-p"></p>
+                    <p id="area-text-4" class="subscore-p"></p>
+                    <p id="area-text-5" class="subscore-p"></p>
+                    <p class="subscore-p"></p>
+                    <a id="open-in-zillow-button" href="#" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true" target="_blank">Listings in this area</a>
+                </div>
+               
+                <div id="check-container">
+                    <h4>Settings</h4>
+                    <label for="similarity-check" class="checkbox-label">Show similar squares on hover </label>
+                    <input id="similarity-check" class="checkbox" type="checkbox">
+                </div>
+
+                <button id="toggle-sidebar-button"><span id="toggle-sidebar-button-icon-wrapper"><i id="toggle-sidebar-button-icon" class="fa fa-arrow-circle-up fa-2x" aria-hidden="true"></i></span></button>
+
+            </div>
+
+            <!-- CANVAS -->
+            <div id="main">
+
+                <div id="spinner" class="d-flex justify-content-center">
+                  <div class="d-flex justify-content-center spinner-border" role="status">
+                    <span class="sr-only">Loading...</span>
+                  </div>
+                </div>
+
+                <!--<svg id="canvas">
+                </svg>-->
+            </div>
+
+            <footer>Made by: <a href="http://benjamindupreez.com/">Benjamin Du Preez</a>, <a href="https://www.linkedin.com/in/lee-sun-21483914/">Lee Sun</a>, <a href="https://www.linkedin.com/in/botao-lee-661b148b/">Botao Lee</a>, <a href="https://www.linkedin.com/in/anyu-lu-914347193/">Anyu Lu</a>, and <a>Baolin Wang</a></footer>
+
+
+            <!-- Javascript CDNs -->
+            <script type="text/javascript" src="https://use.fontawesome.com/e8aaec023a.js"></script>
+            <script type="text/javascript" src="https://d3js.org/d3.v5.min.js"></script>
+            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.9.1/d3-tip.min.js"></script>
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+            <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+              integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+              crossorigin=""></script>
+            <!-- Custom Javascript -->
+            <script type="text/javascript" src="scripts.js"></script>
+        </body>
+</html>
