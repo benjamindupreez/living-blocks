@@ -17,7 +17,7 @@ To run locally:
 4. Open your browser at http://localhost:<port_number>/
 
 ## Online Demo
-https://benjamindupreez.github.io/living-blocks/
+https://benjamindupreez.github.io/living-blocks/ (note the map does not load properly in the online demo due to a lack of a maps key - this will work locally even without a key)
 
 ## Credits
 LivingBlocks was created as a semester project for Prof Polo Chau's CSE6242: Data and Visual Analytics at Georgia Tech. Team Members: Botao Lee, Lee Sun, Baolin Wang, Anyu Lu, Benjamin Du Preez
